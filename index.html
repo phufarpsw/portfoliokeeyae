@@ -9,9 +9,25 @@
     <title>Paifuii</title>
 </head>
 <style>
-    :root{
-        --blue : #0057FF;
+    html {
+        position: fixed;
+        height: 100%;
+        overflow: hidden;
     }
+
+    body {
+        margin: 0;
+        width: 100vw;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    :root {
+        --blue: #0057FF;
+    }
+
     .font {
         color: var(--blue);
     }
@@ -28,24 +44,26 @@
         line-height: 1.3 !important;
     }
 
-    .arrow {
-        transform: translateY(180px);
-    }
 
     .continuous-text {
         display: inline-block;
         white-space: nowrap;
+        max-width: 100%;
+    }
+
+    .continuous-text>.line-text {
         border-bottom: 1px solid var(--blue);
     }
 
-    .continuous-text>span {
+    .continuous-text>div>span {
         letter-spacing: 2px;
         color: var(--blue);
-        font-size: 40px;
         font-weight: 600;
+        /* font-size: 40px; */
         padding: 10px;
     }
-    .svg-text{
+
+    .svg-text {
         fill: var(--blue);
         font: bolder 30px Candara;
     }
@@ -73,16 +91,12 @@
     @keyframes App-logo-spin {
         from {
 
-            transform: translateY(26rem) rotate(0deg);
+            transform: translateY(24rem) rotate(0deg);
         }
 
         to {
-            transform: translateY(26rem) rotate(360deg);
+            transform: translateY(24rem) rotate(360deg);
         }
-    }
-
-    .dashboard {
-        display: flex;
     }
 
     svg {
@@ -123,8 +137,22 @@
     .meter-3 {
         stroke: var(--blue);
         stroke-dasharray: 360;
-        stroke-dashoffset: 250;
+        stroke-dashoffset: 200;
         animation: progress-3 .5s ease-out;
+    }
+
+    .meter-4 {
+        stroke: var(--blue);
+        stroke-dasharray: 360;
+        stroke-dashoffset: 90;
+        animation: progress-4 .5s ease-out;
+    }
+
+    .meter-5 {
+        stroke: var(--blue);
+        stroke-dasharray: 360;
+        stroke-dashoffset: 200;
+        animation: progress-5 .5s ease-out;
     }
 
     @keyframes progress-1 {
@@ -153,44 +181,65 @@
         }
 
         to {
-            stroke-dashoffset: 250;
+            stroke-dashoffset: 200;
         }
+    }
+
+    @keyframes progress-4 {
+        from {
+            stroke-dashoffset: 360;
+        }
+
+        to {
+            stroke-dashoffset: 90;
+        }
+    }
+
+    @keyframes progress-5 {
+        from {
+            stroke-dashoffset: 360;
+        }
+
+        to {
+            stroke-dashoffset: 200;
+        }
+    }
+
+    .grid>.col-span-1 {
+        height: 40rem;
+        border: 1px solid red;
     }
 </style>
 
-<body class="bg-gradient-to-b from-purple-300 from-10% via-purple-300 via-20% to-gray-100 to-60% overflow-x-hidden">
+<body class="bg-gradient-to-b from-purple-300 from-10% via-purple-300 via-20% to-gray-100 to-60%">
     <section class="pt-10 relative">
         <div class="flex items-center justify-center">
             <div class="flex justify-between w-4/6 max-md:w-5/6">
                 <div class="flex flex-col">
-                    <div class="font text-6xl font-medium">Hello!</div>
-                    <div class="font text-4xl font-medium">I'm Kwanpitcha Imdod.</div>
+                    <div class="font text-4xl lg:text-6xl font-medium">Hello!</div>
+                    <div class="font text-xl lg:text-4xl  font-medium">I'm Kwanpitcha Imdod.</div>
                 </div>
                 <div
-                    class="relativ year rounded-full h-11 px-6 py-4 flex items-center justify-center text-white text-xl">
+                    class="relative year rounded-full h-8 lg:h-11 flex items-center justify-center text-white px-4 lg:px-6 text-md text-md lg:text-xl">
                     2023
-                    <img class="arrow absolute" src="./asset/arrow.svg" alt="">
-                    <img class="w-36 circular-spintext absolute" src="./asset/circular_text.svg" alt="">
+                    <img class="arrow absolute hidden lg:block lg:w-8 translate-y-44" src="./asset/arrow.svg" alt="">
+                    <img class="w-36 circular-spintext hidden lg:block absolute" src="./asset/circular_text.svg" alt="">
                 </div>
             </div>
         </div>
         <div class="flex w-9/12 justify-center mt-12">
-            <!-- <div class="" style="width: 700px;">
-                <img src="./asset/ellipseRing.svg" alt="">
-            </div> -->
             <img src="/asset/name_circle.png" width="700" alt="">
             <div class="flex">
                 <div class="flex justify-center items-center">
                     <div class="flex flex-col justify-between">
-
-                        <div class="font text-6xl font-medium uppercase leading-fit">graphic <br>
-                            <span class="inline-flex">&ux/ui <img class="ml-2 w-10" src="./asset/six_line_circle.svg"
-                                    alt=""></span><br>
+                        <div class="font text-3xl lg:text-6xl font-medium uppercase leading-fit">graphic <br>
+                            <span class="inline-flex">&ux/ui <img class="ml-2 w-6 lg:w-10"
+                                    src="./asset/six_line_circle.svg" alt=""></span><br>
                             designer
                         </div>
-                        <div class="mt-4 flex flex-col w-72">
-                            <div class="font text-xl">I have experience in designing
-                                <br>e-commerce, project assignment, and landing pages.
+                        <div class="mt-4 flex flex-col w-40 lg:w-72">
+                            <div class="font text-sm lg:text-xl inline-block">I have experience in designing
+                                e-commerce, project assignment, and landing pages.
                             </div>
                         </div>
                     </div>
@@ -202,23 +251,23 @@
     <section class="relative">
         <div class="flex flex-col justify-center items-center">
             <div class="continuous-text uppercase flex">
-                <span>main pages.&nbsp; main pages.&nbsp; main pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main
-                    pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main pages.&nbsp;main pages.&nbsp; main pages.&nbsp;
-                    main pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main pages.&nbsp;main pages.&nbsp; main
-                    pages.&nbsp; main pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main pages.&nbsp;main pages.&nbsp;
-                    main pages.&nbsp; main pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main pages.&nbsp;main
-                    pages.&nbsp; main pages.&nbsp; main pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main
-                    pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main pages.&nbsp;main pages.&nbsp; main pages.&nbsp;
-                    main pages.&nbsp;</span>
+                <div class="line-text">
+                    <span class="text-[24px] lg:text-[40px]">main pages.&nbsp; main pages.&nbsp; main pages.&nbsp;main
+                        pages.&nbsp; main pages.&nbsp; main
+                        pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main
+                        pages.&nbsp;main pages.&nbsp; main pages.&nbsp; main
+                        pages.&nbsp;main pages.&nbsp; main pages.</span>
+                </div>
             </div>
-            <div class="relative flex w-4/6 mt-12 max-md:flex-col max-md:w-5/6">
+            <div class="relative flex w-5/6 mt-12 max-md:flex-col max-md:w-5/6">
                 <div class="flex-col font space-y-8 w-1/3 max-md:w-full">
-                    <img src="./asset/text_about.svg" width="300" alt="">
-                    <div class="text-xl">I'M TRYING TO STAY WITH CURRENT TRENDS DESIGN AND CONSTANTLY CHALLENGE MYSELF
+                    <img src="./asset/text_about.svg" class="w-32 lg:w-auto" alt="">
+                    <div class="lg:text-xl">I'M TRYING TO STAY WITH CURRENT TRENDS DESIGN AND CONSTANTLY CHALLENGE
+                        MYSELF
                         TO LEARN MORE.</div>
-                    <div class="text-xl ">My name is Puifai a junior years from King Mongkut Institute of Technology
+                    <div class="lg:text-xl ">My name is Puifai a junior years from King Mongkut Institute of Technology
                         Ladkrabang. </div>
-                    <div class="text-xl ">I am 21 years old and
+                    <div class="lg:text-xl ">I am 21 years old and
                         I love art and design at an early age ,
                         so I've dedicated my life to it.</div>
                 </div>
@@ -226,46 +275,72 @@
                     <img width="600" src="./asset/img_puifai.png" alt="">
                     <img class="dokjun w-24" src="./asset/dokjun.svg" alt="">
                 </div>
-                <div class="absolute right-0 space-y-8">
-                    <!-- <img class="w-28" src="/asset/ai_skills.png" alt="">
-                    <img class="w-28" src="/asset/figma_skills.png" alt="">
-                    <img class="w-28" src="/asset/premiere_skills.png" alt="">
-                    <img class="w-28" src="/asset/ps_skills.png" alt="">
-                    <img class="w-28" src="/asset/lightroom_skills.png" alt=""> -->
-                    <div class="dashboard">
-                        <svg>
-                            <circle class="bg" cx="57" cy="57" r="52" />
-                            <text x="35" y="64" class="svg-text">figma</text>
-                            <circle class="meter-1" cx="57" cy="57" r="52" />
-                            <circle style="fill: var(--blue);" cx="70" cy="108" r="9" />
-                        </svg>
-                        <svg>
-                            <circle class="bg" cx="57" cy="57" r="52" />
-                            <text x="50" y="70" class="svg-text" style="font: bolder 45px Candara;">Ai</text>
+                <div class="lg:absolute right-0 space-y-8">
+                    <div class="dashboard flex">
+                        <div class="flex flex-wrap lg:block">
+                            <svg>
+                                <circle class="bg" cx="57" cy="57" r="52" />
+                                <text x="35" y="64" class="svg-text">figma</text>
+                                <circle class="meter-1" cx="57" cy="57" r="52" />
+                                <circle style="fill: var(--blue);" cx="70" cy="108" r="9" />
+                            </svg>
+                            <svg>
+                                <circle class="bg" cx="57" cy="57" r="52" />
+                                <text x="50" y="70" class="svg-text" style="font: bolder 45px Candara;">Ai</text>
 
-                            <circle class="meter-2" cx="57" cy="57" r="52" />
-                            <circle style="fill: var(--blue);" cx="70" cy="108" r="9" />
-                        </svg>
-                        <svg>
-                            <circle class="bg" cx="57" cy="57" r="52" />
-                            <circle class="meter-3" cx="57" cy="57" r="52" />
-                            <circle style="fill: var(--blue);" cx="70" cy="108" r="9" />
-                        </svg>
+                                <circle class="meter-2" cx="57" cy="57" r="52" />
+                                <circle style="fill: var(--blue);" cx="70" cy="108" r="9" />
+                            </svg>
+                            <svg>
+                                <circle class="bg" cx="57" cy="57" r="52" />
+                                <text x="50" y="70" class="svg-text" style="font: bolder 45px Candara;">Pr</text>
+                                <circle class="meter-3" cx="57" cy="57" r="52" />
+                                <circle style="fill: var(--blue);" cx="70" cy="108" r="9" />
+                            </svg>
+                            <svg>
+                                <circle class="bg" cx="57" cy="57" r="52" />
+                                <text x="50" y="70" class="svg-text" style="font: bolder 45px Candara;">Ps</text>
+                                <circle class="meter-4" cx="57" cy="57" r="52" />
+                                <circle style="fill: var(--blue);" cx="70" cy="108" r="9" />
+                            </svg>
+                            <svg>
+                                <circle class="bg" cx="57" cy="57" r="52" />
+                                <text x="50" y="70" class="svg-text" style="font: bolder 45px Candara;">Ps</text>
+                                <circle class="meter-5" cx="57" cy="57" r="52" />
+                                <circle style="fill: var(--blue);" cx="70" cy="108" r="9" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section>
-        <div class="flex">
-            <div class="text text-7xl">PROJECTS</div>
-            <div class="flex w-24">
-                <img src="./asset/circle_line.svg" alt="">
+    <section class="h-full pt-10">
+        <!-- Top -->
+        <div class="flex justify-center border-2 rounded-tr-[10rem] border-[#535151]">
+            <div class="w-5/6 h-full">
+                <div class="inline-flex items-center">
+                    <div class="text text-7xl">PROJECTS</div>
+                    <div class="flex items-center w-24 h-full">
+                        <img src="./asset/circle_line.svg" alt="">
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="detail-project grid grid-cols-2">
+            <!-- First Project Plastic Ocean -->
+            <div class="col-span-1 w-full bg-blue-200">dsadsadasdas
+                <img src="./asset/plastic_project.svg" alt="">
+
+                
+            </div>
+            <div class="col-span-1">2</div>
+            <div class="col-span-1">3</div>
+            <div class="col-span-1">4</div>
         </div>
     </section>
     <script>
-        gsap.to('.continuous-text', { xPercent: -50, ease: 'none', duration: 60, repeat: -1 });
+        gsap.to('.continuous-text', { xPercent: -50, ease: 'none', duration: 15, repeat: -1 });
     </script>
 </body>
 
