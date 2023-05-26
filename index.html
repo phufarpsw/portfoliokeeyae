@@ -7,248 +7,49 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <title>Paifuii</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    html {
-        position: fixed;
-        height: 100%;
-        overflow: hidden;
-    }
 
-    body {
-        margin: 0;
-        width: 100vw;
-        height: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    :root {
-        --blue: #0057FF;
-    }
-
-    .font {
-        color: var(--blue);
-    }
-
-    .text {
-        color: #535151;
-    }
-
-    .year {
-        background-color: var(--blue);
-    }
-
-    .leading-fit {
-        line-height: 1.3 !important;
-    }
-
-
-    .continuous-text {
-        display: inline-block;
-        white-space: nowrap;
-        max-width: 100%;
-    }
-
-    .continuous-text>.line-text {
-        border-bottom: 1px solid var(--blue);
-    }
-
-    .continuous-text>div>span {
-        letter-spacing: 2px;
-        color: var(--blue);
-        font-weight: 600;
-        /* font-size: 40px; */
-        padding: 10px;
-    }
-
-    .svg-text {
-        fill: var(--blue);
-        font: bolder 30px Candara;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-        .dokjun {
-            animation: spin-circle infinite 20s linear;
-        }
-
-        .circular-spintext {
-            animation: App-logo-spin infinite 20s linear;
-        }
-    }
-
-    @keyframes spin-circle {
-        from {
-            transform: rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes App-logo-spin {
-        from {
-
-            transform: translateY(24rem) rotate(0deg);
-        }
-
-        to {
-            transform: translateY(24rem) rotate(360deg);
-        }
-    }
-
-    svg {
-        width: 130px;
-        height: 130px;
-        margin: 1em;
-    }
-
-    .bg {
-        fill: none;
-        stroke-width: 10px;
-        /* stroke: #1A2C34; */
-    }
-
-    [class^="meter-"] {
-        fill: none;
-        stroke-width: 3px;
-        stroke-linecap: round;
-        transform: rotate(90deg);
-        transform-origin: 50% 50%;
-
-    }
-
-    .meter-1 {
-        stroke-dasharray: 360;
-        stroke-dashoffset: 100;
-        stroke: var(--blue);
-        animation: progress-1 1s ease-out;
-    }
-
-    .meter-2 {
-        stroke: var(--blue);
-        stroke-dasharray: 360;
-        stroke-dashoffset: 160;
-        animation: progress-2 .75s ease-out;
-    }
-
-    .meter-3 {
-        stroke: var(--blue);
-        stroke-dasharray: 360;
-        stroke-dashoffset: 200;
-        animation: progress-3 .5s ease-out;
-    }
-
-    .meter-4 {
-        stroke: var(--blue);
-        stroke-dasharray: 360;
-        stroke-dashoffset: 90;
-        animation: progress-4 .5s ease-out;
-    }
-
-    .meter-5 {
-        stroke: var(--blue);
-        stroke-dasharray: 360;
-        stroke-dashoffset: 200;
-        animation: progress-5 .5s ease-out;
-    }
-
-    @keyframes progress-1 {
-        from {
-            stroke-dashoffset: 360;
-        }
-
-        to {
-            stroke-dashoffset: 100;
-        }
-    }
-
-    @keyframes progress-2 {
-        from {
-            stroke-dashoffset: 360;
-        }
-
-        to {
-            stroke-dashoffset: 160;
-        }
-    }
-
-    @keyframes progress-3 {
-        from {
-            stroke-dashoffset: 360;
-        }
-
-        to {
-            stroke-dashoffset: 200;
-        }
-    }
-
-    @keyframes progress-4 {
-        from {
-            stroke-dashoffset: 360;
-        }
-
-        to {
-            stroke-dashoffset: 90;
-        }
-    }
-
-    @keyframes progress-5 {
-        from {
-            stroke-dashoffset: 360;
-        }
-
-        to {
-            stroke-dashoffset: 200;
-        }
-    }
-
-    .grid>.col-span-1 {
-        height: 40rem;
-        border: 1px solid red;
-    }
-</style>
-
-<body class="bg-gradient-to-b from-purple-300 from-10% via-purple-300 via-20% to-gray-100 to-60%">
-    <section class="pt-10 relative">
-        <div class="flex items-center justify-center">
-            <div class="flex justify-between w-4/6 max-md:w-5/6">
-                <div class="flex flex-col">
-                    <div class="font text-4xl lg:text-6xl font-medium">Hello!</div>
-                    <div class="font text-xl lg:text-4xl  font-medium">I'm Kwanpitcha Imdod.</div>
-                </div>
-                <div
-                    class="relative year rounded-full h-8 lg:h-11 flex items-center justify-center text-white px-4 lg:px-6 text-md text-md lg:text-xl">
-                    2023
-                    <img class="arrow absolute hidden lg:block lg:w-8 translate-y-44" src="./asset/arrow.svg" alt="">
-                    <img class="w-36 circular-spintext hidden lg:block absolute" src="./asset/circular_text.svg" alt="">
+<body>
+    <section class="bg-gradient-to-b from-purple-300 from-10% via-purple-300 via-20% to-gray-100 to-60% pt-10 relative">
+        <div class="paper-yup-1">
+            <div class="flex items-center justify-center">
+                <div class="flex justify-between w-4/6 max-md:w-5/6">
+                    <div class="flex flex-col space-y-4">
+                        <div class="font text-4xl lg:text-6xl font-bold">Hello!</div>
+                        <div class="font text-xl lg:text-3xl ">I'm Kwanpitcha Imdod .</div>
+                    </div>
+                    <div
+                        class="relative year rounded-full font-cascadia h-8 lg:h-11 flex items-center justify-center text-white px-4 lg:px-6 text-md text-md lg:text-xl">
+                        2023
+                        <img class="arrow absolute hidden lg:block lg:w-8 translate-y-44" src="./asset/arrow.svg"
+                            alt="">
+                        <img class="w-36 circular-spintext hidden lg:block absolute" src="./asset/circular_text.svg"
+                            alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="flex w-9/12 justify-center mt-12">
-            <img src="/asset/name_circle.png" width="700" alt="">
-            <div class="flex">
-                <div class="flex justify-center items-center">
-                    <div class="flex flex-col justify-between">
-                        <div class="font text-3xl lg:text-6xl font-medium uppercase leading-fit">graphic <br>
-                            <span class="inline-flex">&ux/ui <img class="ml-2 w-6 lg:w-10"
-                                    src="./asset/six_line_circle.svg" alt=""></span><br>
-                            designer
-                        </div>
-                        <div class="mt-4 flex flex-col w-40 lg:w-72">
-                            <div class="font text-sm lg:text-xl inline-block">I have experience in designing
-                                e-commerce, project assignment, and landing pages.
+            <div class="flex w-9/12 justify-center mt-12">
+                <img src="/asset/name_circle.png" width="700" alt="">
+                <div class="flex">
+                    <div class="flex justify-center items-center">
+                        <div class="flex flex-col justify-between">
+                            <div class="font text-3xl lg:text-6xl font-bold uppercase leading-fit font-candara">graphic <br>
+                                <span class="inline-flex">&ux/ui <img class="ml-2 w-6 lg:w-10"
+                                        src="./asset/six_line_circle.svg" alt=""></span><br>
+                                designer
+                            </div>
+                            <div class="mt-4 flex flex-col w-40 lg:w-72">
+                                <div class="font text-sm lg:text-xl inline-block font-candara">I have experience in designing
+                                    e-commerce, project assignment, and landing pages.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Section 2 -->
-    <section class="relative">
+        <!-- Section 2 -->
         <div class="flex flex-col justify-center items-center">
             <div class="continuous-text uppercase flex">
                 <div class="line-text">
@@ -259,9 +60,9 @@
                         pages.&nbsp;main pages.&nbsp; main pages.</span>
                 </div>
             </div>
-            <div class="relative flex w-5/6 mt-12 max-md:flex-col max-md:w-5/6">
+            <div class="relative flex justify-between w-5/6 mt-12 max-md:flex-col max-md:w-5/6">
                 <div class="flex-col font space-y-8 w-1/3 max-md:w-full">
-                    <img src="./asset/text_about.svg" class="w-32 lg:w-auto" alt="">
+                    <img src="./asset/text_about.svg" class="w-32 lg:w-64" alt="">
                     <div class="lg:text-xl">I'M TRYING TO STAY WITH CURRENT TRENDS DESIGN AND CONSTANTLY CHALLENGE
                         MYSELF
                         TO LEARN MORE.</div>
@@ -271,11 +72,11 @@
                         I love art and design at an early age ,
                         so I've dedicated my life to it.</div>
                 </div>
-                <div class="profile-img">
-                    <img width="600" src="./asset/img_puifai.png" alt="">
-                    <img class="dokjun w-24" src="./asset/dokjun.svg" alt="">
+                <div class="profile-img relative">
+                    <img src="./asset/dokjun.svg" class="dokjun w-16 lg:w-24 absolute right-0 bottom-20 z-10" alt="">
+                    <img width="600" class="relative" src="./asset/img_puifai.png" alt="">
                 </div>
-                <div class="lg:absolute right-0 space-y-8">
+                <div class="space-y-8">
                     <div class="dashboard flex">
                         <div class="flex flex-wrap lg:block">
                             <svg>
@@ -314,30 +115,147 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="h-full pt-10">
-        <!-- Top -->
-        <div class="flex justify-center border-2 rounded-tr-[10rem] border-[#535151]">
-            <div class="w-5/6 h-full">
-                <div class="inline-flex items-center">
-                    <div class="text text-7xl">PROJECTS</div>
-                    <div class="flex items-center w-24 h-full">
-                        <img src="./asset/circle_line.svg" alt="">
+        <section class="pt-10 flex justify-center">
+            <div class="w-5/6 h-full flex flex-col lg:flex-row justify-start">
+                <div class="pr-10">
+                    <img src="./asset/education_logo.svg" class="w-[250px] lg:w-[400px] h-auto" alt="">
+                </div>
+                <div class="flex flex-col justify-center relative">
+                    <div class="line absolute w-1 h-[18rem] lg:h-[19.5rem] translate-x-1.5 -translate-y-4"></div>
+                    <div class="school pb-8 flex space-x-7 items-center">
+                        <div class="dot rounded-full "></div>                       
+                        <img src="./asset/bodin.svg" class="w-24 h-24 lg:w-32 lg:h-32" alt="">
+                        <div class="space-y-2">
+                            <p class="text-lg lg:text-2xl font-bold">Secondary Education<br>
+                                Junior High School</p>
+                            <p>Bodindecha (Sing singhaseni)</p>
+                        </div>
+                    </div>
+                    <div class="school pb-8 flex space-x-7 items-center">
+                        <div class="dot rounded-full "></div>                       
+                        <img src="./asset/bodin.svg" class="w-24 h-24 lg:w-32 lg:h-32" alt="">
+                        <div class="space-y-2">
+                            <p class="text-lg lg:text-2xl font-bold">Secondary Education<br>
+                                Senior High School</p>
+                            <p>Bodindecha (Sing singhaseni)</p>
+                        </div>
+                    </div>
+                    <div class="school pb-8 flex space-x-7 items-center">
+                        <div class="dot rounded-full "></div>                       
+                        <img src="./asset/kmitl-logo.svg" class="w-24 h-24 lg:w-32 lg:h-32" alt="">
+                        <div class="space-y-2">
+                            <p class="text-lg lg:text-2xl font-bold">University</p>
+                            <p>King Mongkut's Institute of Technology Ladkrabang</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="detail-project grid grid-cols-2">
-            <!-- First Project Plastic Ocean -->
-            <div class="col-span-1 w-full bg-blue-200">dsadsadasdas
-                <img src="./asset/plastic_project.svg" alt="">
-
-                
+        </section>
+        <!-- Section 3 -->
+        <section class="pt-10">
+            <!-- Top -->
+            <div class="flex justify-center border-2 rounded-tr-[12rem] border-[#535151]">
+                <div class="w-full h-full">
+                    <div class="inline-flex items-center w-1/2 justify-between">
+                        <div class="text text-4xl lg:text-8xl">PROJECTS</div>
+                        <div class="flex items-center w-36 h-full">
+                            <img src="./asset/circle_line.svg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-span-1">2</div>
-            <div class="col-span-1">3</div>
-            <div class="col-span-1">4</div>
-        </div>
+            <div class="detail-project grid grid-cols-1 lg:grid-cols-2">
+                <!-- First Project Plastic Ocean -->
+                <div class="col-span-1 lg:h-screen col-image bg-[#DDEAEF]">
+                    <img src="./asset/plastic_project.svg" class="w-[550px]" alt="">
+                </div>
+                <div class="col-span-1 lg:h-screen col-detail py-8 px-12">
+                    <div
+                        class="absolute top-0 right-0 leading-[0.75] w-[30rem] text-[500px] text-right opacity-5 font-century ">
+                        01
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold text">PLASTIC OCEAN</h1>
+                        <h2 class="text-2xl font-semibold text">landing page</h2>
+                    </div>
+                    <div class="space-y-10">
+                        <p class="text text-xl lg:w-1/2">This project is a landing page a part of Greenpeace Thailand
+                            Project
+                            about Campaign on reducing waste dumping into the seas and oceans. It's the first full
+                            design
+                            project that I tried landing page in 2021.</p>
+                        <div class="w-40">
+                            <p class="text font-bold text-2xl">See project</p>
+                            <img src="./asset/see_arrow.svg" class="-translate-x-2" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 lg:h-screen col-detail py-8 px-12">
+                    <div
+                        class="absolute top-0 right-0 leading-[0.75] w-[30rem] text-[500px] text-right opacity-5 font-century ">
+                        02
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold text">YEAH</h1>
+                        <h2 class="text-2xl font-semibold text">landing page</h2>
+                    </div>
+                    <div class="space-y-10">
+                        <p class="text text-xl lg:w-1/2">This project is a landing page a part of YEAH Project. The YEAH
+                            website is a landing page that provides detailed information about YEAH.</p>
+                        <div class="w-40">
+                            <p class="text font-bold text-2xl">See project</p>
+                            <img src="./asset/see_arrow.svg" class="-translate-x-2" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 lg:h-screen col-image bg-[#FCF6E8]">
+                    <img src="./asset/yeah_project.svg" class="w-[550px]" alt="">
+                </div>
+                <div class="col-span-1 lg:h-screen col-image bg-[#FFEEF6]">
+                    <img src="./asset/myprofile.svg" class="w-[550px]" alt="">
+                </div>
+                <div class="col-span-1 lg:h-screen col-detail py-8 px-12">
+                    <div
+                        class="absolute top-0 right-0 leading-[0.75] w-[30rem] text-[500px] text-right opacity-5 font-century ">
+                        03
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold text">My profile</h1>
+                        <h2 class="text-2xl font-semibold text">landing page</h2>
+                    </div>
+                    <div class="space-y-10">
+                        <p class="text text-xl lg:w-1/2">This project is a landing page created as part of an assignment. The website is designed as a landing page to introduce myself and my profile</p>
+                        <div class="w-40">
+                            <p class="text font-bold text-2xl">See project</p>
+                            <img src="./asset/see_arrow.svg" class="-translate-x-2" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 lg:h-screen col-detail py-8 px-12">
+                    <div
+                        class="absolute top-0 right-0 leading-[0.75] w-[30rem] text-[500px] text-right opacity-5 font-century ">
+                        04
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold text">HARHARN</h1>
+                        <h2 class="text-2xl font-semibold text">Application</h2>
+                    </div>
+                    <div class="space-y-10">
+                        <p class="text text-xl lg:w-1/2">This application is a restaurant recommendation app that features
+                            interesting food menus. Additionally, it also has a random food function for those who are
+                            still unable to decide on a menu.</p>
+                        <div class="w-40">
+                            <p class="text font-bold text-2xl">See project</p>
+                            <img src="./asset/see_arrow.svg" class="-translate-x-2" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 lg:h-screen col-image bg-[#EBF3E3]"> 
+                    <img src="./asset/harharn_project.svg" class="w-[550px]" alt="">
+                </div>
+            </div>
+
+        </section>
     </section>
     <script>
         gsap.to('.continuous-text', { xPercent: -50, ease: 'none', duration: 15, repeat: -1 });
